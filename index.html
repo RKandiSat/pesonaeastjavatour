@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malang East Java — Tour Guide by Kandi</title>
+<meta name="description" content="Explore Malang & East Java with a local guide. Bromo, Tumpak Sewu, Kawah Ijen, culinary tours, and authentic guesthouse stays.">
+<meta name="keywords" content="Malang tour guide, Bromo tour, Tumpak Sewu, Kawah Ijen, East Java travel, Malang guesthouse, Pesona Kos">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+
+<!-- Stylesheet -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-logo" href="#">Malang East Java</a>
+  <ul class="nav-links">
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#culinary">Culinary</a></li>
+    <li><a href="#articles-dest">Articles</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#dos-donts">Tips</a></li>
+    <li><a href="#guesthouse">Stay</a></li>
+    <li><a href="#booking">Book</a></li>
+    <li><a href="#about">Guide</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-eyebrow">East Java, Indonesia</p>
+    <h1 class="hero-title">Where <em>volcanoes</em> meet the soul of Java</h1>
+    <p class="hero-sub">Authentic local tours led by a guide who was born here, lives here, and knows every trail, every warung, and every hidden waterfall worth finding.</p>
+    <a href="#destinations" class="hero-cta">
+      Explore Destinations
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="hero-right">
+    <!-- REPLACE src with your own Bromo hero photo -->
+    <img src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=900&q=80" alt="Mount Bromo East Java at sunrise">
+    <div class="hero-badge">
+      <div class="hero-badge-num">30+</div>
+      <div class="hero-badge-label">Years living Malang</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── WEATHER BAR ── -->
+<div class="weather-bar">
+  <div class="weather-item"><span>📍</span> Malang, East Java</div>
+  <div class="weather-item" id="w-temp"><span>🌡</span> Loading...</div>
+  <div class="weather-item" id="w-humid"></div>
+  <div class="weather-item" id="w-wind"></div>
+  <div class="weather-item" id="w-desc"></div>
+</div>
+
+<!-- ── DESTINATIONS ── -->
+<section id="destinations">
+  <p class="section-label reveal">Destination Tours</p>
+  <h2 class="section-title reveal">East Java's <em style="font-family:'Playfair Display',serif;font-style:italic;color:var(--earth)">iconic landscapes</em></h2>
+  <p class="section-intro reveal">Three destinations that will permanently change how you see the world. Each one requires effort. All of them are worth it.</p>
+
+  <div class="dest-grid reveal">
+
+    <!-- BROMO -->
+    <div class="dest-card" onclick="toggleDetail('bromo-detail', this.querySelector('.dest-toggle-btn'))">
+      <img src="bromo.jpg" alt="Mount Bromo volcano East Java">
+      <div class="dest-overlay">
+        <p class="dest-tag">Active Volcano · 2,329m</p>
+        <h3 class="dest-name">Mount Bromo</h3>
+        <p class="dest-desc">Rise before dawn for the most iconic sunrise in Indonesia. Watch smoke rise from the caldera as golden light floods the sea of sand below. A spiritual, humbling experience unlike any other.</p>
+        <p class="dest-distance">📍 ~3 hours from Malang · Best: April–October</p>
+        <button class="dest-toggle-btn" onclick="event.stopPropagation(); toggleDetail('bromo-detail', this)">
+          View full details <em class="arrow">▼</em>
+        </button>
+      </div>
+    </div>
+
+    <!-- TUMPAK SEWU -->
+    <div class="dest-card" onclick="toggleDetail('tumpak-detail', this.querySelector('.dest-toggle-btn'))">
+      <img src="tumpaksewu.jpg" alt="Tumpak Sewu waterfall East Java">
+      <div class="dest-overlay">
+        <p class="dest-tag">Waterfall · 120m drop</p>
+        <h3 class="dest-name">Tumpak Sewu</h3>
+        <p class="dest-desc">Indonesia's most breathtaking waterfall — a curtain of water 120 meters wide and tall, hidden deep in a jungle gorge. The descent is steep and the reward is extraordinary.</p>
+        <p class="dest-distance">📍 ~3.5 hours from Malang · Best: Year-round</p>
+        <button class="dest-toggle-btn" onclick="event.stopPropagation(); toggleDetail('tumpak-detail', this)">
+          View full details <em class="arrow">▼</em>
+        </button>
+      </div>
+    </div>
+
+    <!-- KAWAH IJEN -->
+    <div class="dest-card" onclick="toggleDetail('ijen-detail', this.querySelector('.dest-toggle-btn'))">
+      <img src="kawahijen.jpg" alt="Kawah Ijen blue fire crater">
+      <div class="dest-overlay">
+        <p class="dest-tag">Blue Fire Phenomenon</p>
+        <h3 class="dest-name">Kawah Ijen</h3>
+        <p class="dest-desc">One of only two places on Earth where blue fire burns — electric blue flames visible only at night. Plus the world's largest acidic volcanic lake glowing at sunrise.</p>
+        <p class="dest-distance">📍 ~4 hours from Malang · Night hike required</p>
+        <button class="dest-toggle-btn" onclick="event.stopPropagation(); toggleDetail('ijen-detail', this)">
+          View full details <em class="arrow">▼</em>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BROMO DETAIL PANEL -->
+  <div class="dest-detail" id="bromo-detail">
+    <div class="dest-detail-inner">
+      <p class="dest-detail-full">
+        Mount Bromo (2,329m) sits inside the massive Tengger Caldera in Bromo Tengger Semeru National Park — a landscape so otherworldly it barely feels like Earth. The tour departs Malang at midnight, driving through darkness to reach Penanjakan viewpoint before dawn. As the sky lightens, an ocean of cloud fills the caldera below and the smoking crater of Bromo emerges from the mist. After sunrise, a 4WD jeep crosses the famous Sea of Sand to the base of Bromo's crater, followed by 250 steps to the rim where thick sulfuric smoke rises from deep below. A rare, humbling, unforgettable experience.
+      </p>
+
+      <!-- YOUTUBE VIDEO — BROMO -->
+      <!-- HOW TO USE: paste your YouTube video URL here -->
+      <!-- Example: https://www.youtube.com/watch?v=XXXXXXXXXXX -->
+      <!-- Replace PASTE_YOUTUBE_ID_HERE with the video ID (the part after ?v=) -->
+      <div class="yt-wrap">
+        <div class="yt-placeholder" id="yt-bromo" onclick="loadYT('yt-bromo','PASTE_YOUTUBE_ID_HERE')">
+          <div class="yt-play">▶</div>
+          <p class="yt-label">Mount Bromo — Watch the Experience</p>
+          <p class="yt-hint">Click to load video · Replace ID in HTML first</p>
+        </div>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">✦ Highlights</p>
+        <ul class="detail-list">
+          <li>Sunrise from Penanjakan viewpoint — most iconic view in Indonesia</li>
+          <li>4WD jeep ride across the Sea of Sand at dawn</li>
+          <li>250 steps to the active crater rim with live smoke</li>
+          <li>Edelweiss flowers and Tengger Hindu cultural sites</li>
+          <li>Teletubbies Hill and savanna landscape views</li>
+          <li>Option to combine with Tumpak Sewu or Kawah Ijen</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">✦ Included in Tour</p>
+        <ul class="detail-list">
+          <li>Private car transfer from Malang (both ways)</li>
+          <li>English-speaking local guide throughout</li>
+          <li>4WD jeep to and from crater base</li>
+          <li>National park entrance ticket</li>
+          <li>Warm breakfast at viewpoint</li>
+          <li>Hotel pickup and drop-off</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">⚠ Not Suitable For</p>
+        <ul class="detail-list warning">
+          <li>Wheelchair users or guests with mobility impairments — terrain is volcanic sand and steep stairs with no railings</li>
+          <li>Guests with severe respiratory conditions — sulfur smoke at crater rim can be intense</li>
+          <li>Young children under 5 — very early departure, cold temperatures, and rough jeep terrain</li>
+          <li>Guests with serious heart or blood pressure conditions — altitude and exertion involved</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">→ Important Information</p>
+        <ul class="detail-list info">
+          <li>Departure from Malang at 12:00–01:00 AM — this is a night tour</li>
+          <li>Temperature at viewpoint can drop to 5–10°C — bring a warm jacket and gloves</li>
+          <li>Bring a dust mask or buff — Sea of Sand becomes very dusty after sunrise</li>
+          <li>Wear hiking boots or closed shoes with grip — no sandals</li>
+          <li>Entrance ticket: IDR 220,000 (weekday) / IDR 320,000 (weekend) for foreigners — included in tour</li>
+          <li>Tickets must be booked in advance — walk-in no longer permitted</li>
+          <li>Bring a headlamp — early morning hiking in complete darkness</li>
+          <li>Camera fully charged — cold drains battery 30–40% faster than normal</li>
+        </ul>
+      </div>
+      <a class="map-link" href="https://maps.google.com/maps?q=Mount+Bromo+Tengger+Semeru+National+Park,+East+Java" target="_blank" rel="noopener">
+        🗺 View Mount Bromo on Google Maps →
+      </a>
+    </div>
+  </div>
+
+  <!-- TUMPAK SEWU DETAIL PANEL -->
+  <div class="dest-detail" id="tumpak-detail">
+    <div class="dest-detail-inner">
+      <p class="dest-detail-full">
+        Tumpak Sewu — meaning "a thousand waterfalls" — is a 120-meter curtain waterfall on the border of Lumajang and Malang regencies, widely regarded as Indonesia's most dramatic natural spectacle. The experience begins at the top viewpoint where the full scale of the waterfall hits you for the first time — a wall of white water dropping into a deep jungle gorge. Then comes the descent: a steep, rope-assisted trail down to the base, where you stand directly in front of the falls with mist soaking everything and the roar of water filling the canyon. Nearby Goa Tetes cave, where waterfalls flow through limestone chambers, adds another dimension to an already extraordinary day.
+      </p>
+
+      <!-- YOUTUBE VIDEO — TUMPAK SEWU -->
+      <!-- Replace PASTE_YOUTUBE_ID_HERE with the video ID from your chosen YouTube URL -->
+      <div class="yt-wrap">
+        <div class="yt-placeholder" id="yt-tumpak" onclick="loadYT('yt-tumpak','PASTE_YOUTUBE_ID_HERE')">
+          <div class="yt-play">▶</div>
+          <p class="yt-label">Tumpak Sewu — Watch the Experience</p>
+          <p class="yt-hint">Click to load video · Replace ID in HTML first</p>
+        </div>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">✦ Highlights</p>
+        <ul class="detail-list">
+          <li>Top viewpoint — full panoramic view of the 120m curtain waterfall</li>
+          <li>Steep canyon descent with rope assistance to the waterfall base</li>
+          <li>Standing at the base of Indonesia's most dramatic waterfall</li>
+          <li>Goa Tetes cave — waterfalls flowing through limestone chambers</li>
+          <li>Lush jungle trail with exotic flora and volcanic landscape</li>
+          <li>Option to combine with Mount Bromo for a 2-day East Java adventure</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">✦ Included in Tour</p>
+        <ul class="detail-list">
+          <li>Private car transfer from Malang (both ways)</li>
+          <li>English-speaking local guide throughout</li>
+          <li>Local trekking ranger at the waterfall site</li>
+          <li>Entrance ticket to Tumpak Sewu and Goa Tetes</li>
+          <li>Hotel pickup and drop-off</li>
+          <li>Packed lunch or local meal stop en route</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">⚠ Not Suitable For</p>
+        <ul class="detail-list warning">
+          <li>Wheelchair users or guests with any mobility impairment — steep cliff descent with ropes, no alternative route to the base</li>
+          <li>Guests with knee or joint problems — the descent and ascent are physically demanding</li>
+          <li>Young children under 7 — trail is narrow, steep, and slippery</li>
+          <li>Guests who are not comfortable with heights — trail edges have significant drops</li>
+          <li>Not recommended during heavy rain — trail becomes extremely slippery and dangerous</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">→ Important Information</p>
+        <ul class="detail-list info">
+          <li>Departure from Malang by 06:00–07:00 AM — early start is essential</li>
+          <li>Wear clothes you don't mind getting wet — mist at the base soaks everything</li>
+          <li>Waterproof hiking shoes or sandals with grip are strongly recommended</li>
+          <li>Bring a dry bag or waterproof case for your phone and camera</li>
+          <li>Total hike time approximately 3–4 hours including descent and ascent</li>
+          <li>Moderate to high fitness required — not a casual walk</li>
+          <li>Best visited in dry season (April–October) — trail is safer and views cleaner</li>
+          <li>Use Lumajang entrance — gives full access including canyon descent</li>
+        </ul>
+      </div>
+      <a class="map-link" href="https://maps.google.com/maps?q=Tumpak+Sewu+Waterfall,+Lumajang,+East+Java" target="_blank" rel="noopener">
+        🗺 View Tumpak Sewu on Google Maps →
+      </a>
+    </div>
+  </div>
+
+  <!-- KAWAH IJEN DETAIL PANEL -->
+  <div class="dest-detail" id="ijen-detail">
+    <div class="dest-detail-inner">
+      <p class="dest-detail-full">
+        Kawah Ijen is one of Earth's rarest natural phenomena — an active volcano on the border of Banyuwangi and Bondowoso regencies that produces electric-blue fire, visible only in the dark of night. The blue flame is caused by ignited sulfuric gases burning at extremely high temperatures, creating an eerie, alien glow at the crater's edge. The tour departs Malang at midnight, reaching Paltuding base camp for the 3km hike to the summit in darkness. At the crater rim, the blue fire glows against the black sky. As dawn arrives, the world's largest acidic volcanic crater lake — turquoise, vast, impossibly beautiful — is revealed below. The descent into the crater (with gas masks) passes sulfur miners carrying up to 90kg of yellow rock on their backs, a humbling reminder of human resilience that stays with every visitor long after the journey home.
+      </p>
+
+      <!-- YOUTUBE VIDEO — KAWAH IJEN -->
+      <!-- Replace PASTE_YOUTUBE_ID_HERE with the video ID from your chosen YouTube URL -->
+      <div class="yt-wrap">
+        <div class="yt-placeholder" id="yt-ijen" onclick="loadYT('yt-ijen','PASTE_YOUTUBE_ID_HERE')">
+          <div class="yt-play">▶</div>
+          <p class="yt-label">Kawah Ijen Blue Fire — Watch the Experience</p>
+          <p class="yt-hint">Click to load video · Replace ID in HTML first</p>
+        </div>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">✦ Highlights</p>
+        <ul class="detail-list">
+          <li>Blue fire phenomenon — one of only two on Earth, visible only at night</li>
+          <li>World's largest acidic volcanic crater lake — turquoise at sunrise</li>
+          <li>Descend into the crater with gas masks provided</li>
+          <li>Witness sulfur miners at work — one of Java's most moving cultural experiences</li>
+          <li>Dead forest landscape near the rim — hauntingly beautiful for photography</li>
+          <li>Panoramic summit views of Mount Merapi and surrounding peaks at dawn</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">✦ Included in Tour</p>
+        <ul class="detail-list">
+          <li>Private car transfer from Malang to Paltuding base camp (both ways)</li>
+          <li>English-speaking local guide for the full hike</li>
+          <li>Gas mask provided — mandatory for crater descent</li>
+          <li>National park entrance ticket</li>
+          <li>Health certificate assistance (required since 2024)</li>
+          <li>Hotel pickup and drop-off</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">⚠ Not Suitable For</p>
+        <ul class="detail-list warning">
+          <li>Wheelchair users or guests with mobility impairments — 3km steep mountain trail with 25% incline sections</li>
+          <li>Guests with respiratory conditions (asthma, COPD) — sulfur gas exposure even with masks</li>
+          <li>Guests with epilepsy, high blood pressure, or serious heart conditions</li>
+          <li>Pregnant women — strenuous night hike at altitude</li>
+          <li>Children under 10 — night departure, physically demanding, sulfur exposure</li>
+          <li>Guests on certain medications — check with doctor regarding altitude and sulfur exposure</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">→ Important Information</p>
+        <ul class="detail-list info">
+          <li>Departure from Malang at 10:00–11:00 PM — this is an overnight journey</li>
+          <li>Bring a health certificate — mandatory since 2024, we assist with this</li>
+          <li>Temperature at summit can drop below 10°C — warm jacket and gloves essential</li>
+          <li>Bring a headlamp — hands-free lighting is critical for the dark ascent</li>
+          <li>Minimum 1.5 liters of water and high-energy snacks — no shops on trail</li>
+          <li>Hiking boots with strong grip required — trail is steep, rocky, and slippery</li>
+          <li>Blue fire only visible in darkness — arrive at crater by 02:00–03:00 AM</li>
+          <li>Crater is CLOSED every first Friday of the month — confirm dates before booking</li>
+          <li>Do NOT touch the crater lake — pH below 0.3, causes severe chemical burns</li>
+          <li>Always yield to sulfur miners on the trail — they cannot stop with heavy loads</li>
+        </ul>
+      </div>
+      <a class="map-link" href="https://maps.google.com/maps?q=Kawah+Ijen+Crater,+Banyuwangi,+East+Java" target="_blank" rel="noopener">
+        🗺 View Kawah Ijen on Google Maps →
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── CULINARY ── -->
+<section id="culinary">
+  <p class="section-label reveal">Culinary Tours</p>
+  <h2 class="section-title reveal">Malang's <em style="font-family:'Playfair Display',serif;font-style:italic;color:var(--gold)">legendary flavours</em></h2>
+  <p class="section-intro reveal">Malang is East Java's food capital. These three restaurants have fed generations of locals and earned the loyalty of every visitor who finds them.</p>
+
+  <div class="culinary-grid reveal">
+
+    <!-- TOKO OEN -->
+    <div class="food-card">
+      <img class="food-img" src="eskrimtokooen.jpg" alt="Toko Oen heritage restaurant Malang">
+      <div class="food-body">
+        <div class="food-number">01</div>
+        <h3 class="food-name">Toko Oen</h3>
+        <p class="food-type">Heritage Restaurant · Est. 1930s</p>
+        <p class="food-desc">Step inside and time stops. Dutch colonial architecture, vintage wooden chairs, songs from the 1970s playing softly, and homemade ice cream that has outlasted empires. A taste of Malang's layered history.</p>
+        <div class="food-highlight">Must try: Homemade ice cream & Asian-Dutch chicken steak. Cash only.</div>
+        <button class="dest-toggle-btn" style="margin-top:1rem" onclick="toggleDetail('toko-oen-detail', this)">
+          View full details <em class="arrow">▼</em>
+        </button>
+      </div>
+    </div>
+
+    <!-- BAKSO PRESIDENT -->
+    <div class="food-card">
+      <img class="food-img" src="baksopresident.jpg" alt="Bakso President Malang street food">
+      <div class="food-body">
+        <div class="food-number">02</div>
+        <h3 class="food-name">Bakso President</h3>
+        <p class="food-type">Street Food Icon · By the Train Tracks</p>
+        <p class="food-desc">No trip to Malang is complete without this. Charcoal-grilled meatballs — tender, smoky, juicy — served open-air where the rumble of passing trains is part of the atmosphere.</p>
+        <div class="food-highlight">Must try: Bakso Bakar — charcoal grilled meatballs with sambal</div>
+        <button class="dest-toggle-btn" style="margin-top:1rem" onclick="toggleDetail('bakso-detail', this)">
+          View full details <em class="arrow">▼</em>
+        </button>
+      </div>
+    </div>
+
+    <!-- RAWON NGULING -->
+    <div class="food-card">
+      <img class="food-img" src="rawonnguling.jpg" alt="Rawon Nguling traditional Javanese beef soup">
+      <div class="food-body">
+        <div class="food-number">03</div>
+        <h3 class="food-name">Rawon Nguling</h3>
+        <p class="food-type">Traditional Javanese · Since 1983</p>
+        <p class="food-desc">The definitive East Javanese beef soup — a deep black broth from kluwek nuts, slow-cooked tender beef, and four decades of recipe refinement. Always crowded. Always worth the wait.</p>
+        <div class="food-highlight">Must try: Rawon with perkedel, mendol & sambal</div>
+        <button class="dest-toggle-btn" style="margin-top:1rem" onclick="toggleDetail('rawon-detail', this)">
+          View full details <em class="arrow">▼</em>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TOKO OEN DETAIL -->
+  <div class="dest-detail" id="toko-oen-detail">
+    <div class="dest-detail-inner">
+      <p class="dest-detail-full">
+        Toko Oen has stood at Jl. Jenderal Basuki Rahmat No.5 since the 1930s — through Dutch colonialism, independence, and decades of change — and its interior looks almost exactly as it did then. High ceilings, round wooden tables, vintage chairs, faded colonial signs in Dutch, and 1970s Indonesian songs drifting through the air. The menu mixes Dutch and Indonesian dishes that were popular among colonial-era Malang society: homemade ice cream in flavors like Tutti Fruity and vanilla, chicken steak with brown sauce, fried spring rolls, nasi goreng, and Dutch-style croquettes. It is not the finest food in Malang — but it is the most atmospheric, and a visit here is a genuine step back in time that no other restaurant in East Java can replicate.
+      </p>
+
+      <!-- YOUTUBE VIDEO — TOKO OEN -->
+      <!-- Replace PASTE_YOUTUBE_ID_HERE with the video ID from your chosen YouTube URL -->
+      <div class="yt-wrap">
+        <div class="yt-placeholder" id="yt-tokooen" onclick="loadYT('yt-tokooen','PASTE_YOUTUBE_ID_HERE')">
+          <div class="yt-play">▶</div>
+          <p class="yt-label">Toko Oen Malang — Watch the Experience</p>
+          <p class="yt-hint">Click to load video · Replace ID in HTML first</p>
+        </div>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">✦ Highlights</p>
+        <ul class="detail-list">
+          <li>Unaltered Dutch colonial interior — one of the most photogenic spaces in Malang</li>
+          <li>Homemade ice cream in classic flavors — Tutti Fruity, vanilla, chocolate</li>
+          <li>Menu partly written in Dutch — a genuine living time capsule</li>
+          <li>Chicken steak with iconic brown sauce — an Asian-Dutch fusion classic</li>
+          <li>Fried spring rolls (lumpia goreng) made fresh on-site</li>
+          <li>Central location — walkable from Alun-Alun Malang city square</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">✦ What to Order</p>
+        <ul class="detail-list">
+          <li><strong>Es Krim Tutti Fruity</strong> — the signature, made with a traditional recipe since the 1930s</li>
+          <li><strong>Chicken steak with brown sauce</strong> — the most ordered main dish by international visitors</li>
+          <li><strong>Lumpia goreng</strong> — crispy fried spring rolls, a crowd favourite</li>
+          <li><strong>Roti jadul</strong> — old-style bread, rarely found elsewhere in Malang</li>
+          <li><strong>Vanilla iced coffee</strong> — brewed with colonial-era method, distinctly smooth</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">→ Practical Information</p>
+        <ul class="detail-list info">
+          <li><strong>Address:</strong> Jl. Jenderal Basuki Rahmat No.5, Kauman, Klojen, Malang</li>
+          <li><strong>Hours:</strong> 09:00 – 21:30 daily</li>
+          <li><strong>Price range:</strong> Rp 40,000 – Rp 120,000 per person</li>
+          <li><strong>Payment:</strong> Cash only — no cards, no QRIS</li>
+          <li><strong>Parking:</strong> Limited — best reached by ojek or on foot from city centre</li>
+          <li><strong>Dress code:</strong> None — but the atmosphere rewards a slightly nicer outfit for photos</li>
+          <li><strong>Honest note:</strong> Come for the atmosphere and history, not for cutting-edge cuisine. The experience is the point.</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">⚠ Good to Know</p>
+        <ul class="detail-list warning">
+          <li>Not air-conditioned — can feel warm during the day, cooler in evenings</li>
+          <li>Ice cream is more like a soft-serve than a dense gelato — different from Western expectations</li>
+          <li>Prices are higher than typical Malang warungs — you are paying for the heritage experience</li>
+          <li>Can get busy on weekends — arrive before 11:00 AM or after 14:00 for quieter tables</li>
+        </ul>
+      </div>
+      <iframe class="map-embed"
+        src="https://maps.google.com/maps?q=Toko+Oen+Malang,+Jl.+Jenderal+Basuki+Rahmat+No.5,+Malang&output=embed&z=17"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Toko Oen Malang location map">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- BAKSO PRESIDENT DETAIL -->
+  <div class="dest-detail" id="bakso-detail">
+    <div class="dest-detail-inner">
+      <p class="dest-detail-full">
+        Bakso President was born in the 1970s when Abah Sugito — a migrant to Malang — started carrying a pole-hung cart of meatballs through the city's streets. Decades later, the permanent warung he eventually built sits right beside the railway tracks at Jl. Sunandar Priyo Sudarmo, and the sound of passing trains is now considered part of the dining experience. The star of the menu is Bakso Bakar — charcoal-grilled meatballs, smoky and tender, brushed with spiced soy sauce and served with sambal. Prices range from Rp 12,000 to Rp 34,000 per item, making this one of the most affordable authentic food experiences in Malang. Order directly at the counter, find a table, and wait for the train.
+      </p>
+
+      <!-- YOUTUBE VIDEO — BAKSO PRESIDENT -->
+      <!-- Replace PASTE_YOUTUBE_ID_HERE with the video ID from your chosen YouTube URL -->
+      <div class="yt-wrap">
+        <div class="yt-placeholder" id="yt-bakso" onclick="loadYT('yt-bakso','PASTE_YOUTUBE_ID_HERE')">
+          <div class="yt-play">▶</div>
+          <p class="yt-label">Bakso President Malang — Watch the Experience</p>
+          <p class="yt-hint">Click to load video · Replace ID in HTML first</p>
+        </div>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">✦ Highlights</p>
+        <ul class="detail-list">
+          <li>Bakso Bakar — charcoal-grilled meatballs unique to this style of Malang street food</li>
+          <li>Dining directly beside active railway tracks — trains pass during meals</li>
+          <li>Founded 1970s — a true multi-generational Malang food institution</li>
+          <li>One of the cheapest authentic food experiences in Malang</li>
+          <li>Open-air setting with local atmosphere — no tourist-trap pricing</li>
+          <li>Bakso Malang style — served with noodles, tofu, and clear beef broth</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">✦ What to Order</p>
+        <ul class="detail-list">
+          <li><strong>Bakso Bakar</strong> — charcoal-grilled, the must-order item, served with sambal</li>
+          <li><strong>Bakso Campur</strong> — mixed meatball bowl with noodles and clear soup</li>
+          <li><strong>Bakso Urat</strong> — tendon meatball, chewy and packed with flavour</li>
+          <li><strong>Tahu Goreng</strong> — fried tofu, perfect alongside the soup</li>
+          <li><strong>Es Teh Manis</strong> — sweet iced tea, the classic pairing</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">→ Practical Information</p>
+        <ul class="detail-list info">
+          <li><strong>Address:</strong> Jl. Sunandar Priyo Sudarmo, Purwantoro, Blimbing, Malang</li>
+          <li><strong>Hours:</strong> 08:30 – 21:30 daily</li>
+          <li><strong>Price range:</strong> Rp 12,000 – Rp 50,000 per person — very affordable</li>
+          <li><strong>Payment:</strong> Cash preferred; some branches accept QRIS</li>
+          <li><strong>Ordering:</strong> Go directly to the counter to order and pay first, then find a seat</li>
+          <li><strong>Best time to visit:</strong> Avoid peak lunch hours (12:00–14:00) — can get very crowded and queues are long</li>
+          <li><strong>Getting there:</strong> ~15 minutes from Malang city centre by ojek or car</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">⚠ Good to Know</p>
+        <ul class="detail-list warning">
+          <li>The space is small and can feel cramped during busy hours — patience required</li>
+          <li>Seating is open-air beside the tracks — bring insect repellent in the evening</li>
+          <li>Railway crossing nearby — be careful when crossing from the car park</li>
+          <li>This is a warung, not a restaurant — cleanliness is local standard, not hotel standard</li>
+        </ul>
+      </div>
+      <iframe class="map-embed"
+        src="https://maps.google.com/maps?q=Bakso+President+Malang,+Jl.+Sunandar+Priyo+Sudarmo,+Malang&output=embed&z=17"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Bakso President Malang location map">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- RAWON NGULING DETAIL -->
+  <div class="dest-detail" id="rawon-detail">
+    <div class="dest-detail-inner">
+      <p class="dest-detail-full">
+        Rawon is East Java's most distinctive dish — a deep black beef soup made with kluwek (keluak) nuts that give it an earthy, umami-rich broth unlike anything found in the rest of Indonesia. Rawon Nguling has been Malang's most respected version of this dish since 1983, originally from the Nguling area of Probolinggo before establishing its flagship location at Jl. Zainul Arifin No.62 in central Malang. The restaurant opens at 07:00 AM and regularly sells out before 15:00 — because the broth is made fresh each day in limited quantity and is not replenished. The walls are covered with photos of celebrities and local officials who have eaten here. At each table, a plate of fried gorengan — perkedel (potato cake), babat (tripe), tempe, empal (fried beef) — arrives automatically. You eat what you want and pay only for what you take.
+      </p>
+
+      <!-- YOUTUBE VIDEO — RAWON NGULING -->
+      <!-- Replace PASTE_YOUTUBE_ID_HERE with the video ID from your chosen YouTube URL -->
+      <div class="yt-wrap">
+        <div class="yt-placeholder" id="yt-rawon" onclick="loadYT('yt-rawon','PASTE_YOUTUBE_ID_HERE')">
+          <div class="yt-play">▶</div>
+          <p class="yt-label">Rawon Nguling Malang — Watch the Experience</p>
+          <p class="yt-hint">Click to load video · Replace ID in HTML first</p>
+        </div>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">✦ Highlights</p>
+        <ul class="detail-list">
+          <li>Rawon Dengkul — slow-braised cow knee in black kluwek broth, the restaurant's crown dish</li>
+          <li>Rawon Buntut — oxtail rawon, extraordinary tenderness in rich black soup</li>
+          <li>Pay-what-you-take gorengan system — grab from the plate, pay only for what you eat</li>
+          <li>Open since 1983 — photos of celebrities and officials cover every wall</li>
+          <li>Opens at 07:00 AM — an exceptional option for a proper Javanese breakfast</li>
+          <li>Rated 4.5/5 across 8,000+ reviews — one of Malang's most consistent restaurants</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">✦ What to Order</p>
+        <ul class="detail-list">
+          <li><strong>Rawon Dengkul</strong> — cow knee rawon, the signature dish, deeply satisfying</li>
+          <li><strong>Rawon Buntut</strong> — oxtail rawon, larger portion, extraordinary texture</li>
+          <li><strong>Rawon Daging</strong> — classic beef rawon, the standard and still excellent</li>
+          <li><strong>Perkedel</strong> — fried potato cake from the gorengan plate, do not skip</li>
+          <li><strong>Tempe goreng</strong> — described by regulars as the best fried tempeh in Malang</li>
+          <li><strong>Es Dawet</strong> — sweet coconut milk drink, perfect to finish the meal</li>
+          <li><strong>Tip:</strong> Add a squeeze of fresh lime and a boiled duck egg — transforms the broth</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">→ Practical Information</p>
+        <ul class="detail-list info">
+          <li><strong>Address:</strong> Jl. Zainul Arifin No.62, Kiduldalem, Klojen, Malang</li>
+          <li><strong>Hours:</strong> 07:00 – 15:00 daily — closes when soup runs out, often before 15:00</li>
+          <li><strong>Price range:</strong> Rp 75,000 – Rp 150,000 per person including gorengan</li>
+          <li><strong>Payment:</strong> Cash and QRIS accepted</li>
+          <li><strong>Best time:</strong> Arrive before 11:00 to avoid the lunch crowd — early morning visit (07:00–09:00) is remarkably peaceful and atmospheric</li>
+          <li><strong>Getting there:</strong> Central Malang, ~10 minutes from Alun-Alun city square</li>
+          <li><strong>Parking:</strong> Limited street parking — arrive early or take ojek</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <p class="detail-block-title">⚠ Good to Know</p>
+        <ul class="detail-list warning">
+          <li>Closes when soup runs out — do not plan a late lunch, you may find it closed</li>
+          <li>No prices on the menu board — ask staff before ordering if you want exact costs</li>
+          <li>The gorengan plate arrives automatically — you pay for whatever you take from it</li>
+          <li>Not suitable for vegetarians or halal-strict diners who avoid all pork derivatives — confirm with staff</li>
+          <li>Very busy at lunch — expect to share tables during peak hours (11:00–13:00)</li>
+        </ul>
+      </div>
+      <iframe class="map-embed"
+        src="https://maps.google.com/maps?q=Depot+Rawon+Nguling,+Jl.+Zainul+Arifin+No.62,+Malang&output=embed&z=17"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Rawon Nguling Malang location map">
+      </iframe>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── DESTINATION ARTICLES ── -->
+<section id="articles-dest">
+  <p class="section-label reveal">In Depth</p>
+  <h2 class="section-title reveal">Stories from <em style="font-family:'Playfair Display',serif;font-style:italic;color:var(--earth)">the field</em></h2>
+  <p class="section-intro reveal">These are not travel brochures. These are honest accounts of what it is really like to visit East Java's most iconic destinations — written by someone who has been there many times.</p>
+
+  <div class="articles-grid reveal">
+
+    <!-- BROMO ARTICLE -->
+    <article class="article-card">
+      <div class="article-img-wrap">
+        <img src="bromo.jpg" alt="Mount Bromo sunrise" class="article-img">
+        <span class="article-tag">Destination</span>
+      </div>
+      <div class="article-body">
+        <p class="article-meta">By Kandi · East Java Guide</p>
+        <h3 class="article-title">Mount Bromo: What Nobody Tells You Before You Go</h3>
+        <div class="article-text">
+          <p>The photographs do not prepare you. Every picture of Bromo looks like a painting — too dramatic, too perfect, too composed to be real. Then you stand at Penanjakan at 4:30 in the morning, wrapped in a jacket that is not warm enough, surrounded by the smell of sulfur and the sound of wind, and the caldera below you begins to glow, and you understand that the photographs were actually underplaying it.</p>
+          <p>I have done this trip more times than I can count. I have watched first-timers step out of the jeep at the viewpoint, take one look, and go completely silent. That silence — when a person stops narrating their experience and just lives inside it — is the moment that makes this job worth doing.</p>
+          <p>What nobody tells you before you go: it is cold. Not "bring a light jacket" cold. At the Penanjakan viewpoint, at altitude, before sunrise, in East Java's dry season, the temperature can drop to 5°C. I have seen tourists from Australia, Europe, and North America — people who live in cold climates — underestimate this badly. Bring your warmest jacket. Bring gloves. If you have a buff or scarf, bring that too.</p>
+          <p>What else nobody tells you: the Sea of Sand is dusty. After sunrise, as the jeeps start moving and the wind picks up, the volcanic sand becomes airborne. Without a dust mask or buff over your nose and mouth, you will spend the drive back coughing. Pack one in your bag the night before — they cost almost nothing at any minimarket.</p>
+          <p>The 250 steps to the crater rim are not as hard as they sound. They are steep, and the air carries sulfur, but the steps are well-maintained and there is a handrail for most of the way. Most moderately fit people make it without significant difficulty. What is humbling is standing at the top — looking down into a smoking crater that is actively creating the landscape beneath you — and realising that the Earth is still making itself.</p>
+          <p>The Tengger people who live around Bromo have been here for hundreds of years. They are Hindu in a country that is 87% Muslim. Every year during the Kasada festival, they climb to the crater rim and throw offerings — fruit, vegetables, livestock — into the fire. That ancient practice, happening in the same landscape you are now standing in as a tourist, is a reminder that this place belongs to them far more than it belongs to any photograph or bucket list.</p>
+          <p>Come to Bromo. But come prepared, come respectful, and come willing to be genuinely surprised.</p>
+        </div>
+        <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I%20want%20to%20book%20the%20Bromo%20tour." class="article-cta" target="_blank">Book this tour →</a>
+      </div>
+    </article>
+
+    <!-- TUMPAK SEWU ARTICLE -->
+    <article class="article-card">
+      <div class="article-img-wrap">
+        <img src="tumpaksewu.jpg" alt="Tumpak Sewu waterfall" class="article-img">
+        <span class="article-tag">Destination</span>
+      </div>
+      <div class="article-body">
+        <p class="article-meta">By Kandi · East Java Guide</p>
+        <h3 class="article-title">Tumpak Sewu: The Waterfall That Earns Its Reputation</h3>
+        <div class="article-text">
+          <p>Most waterfalls you can see from a safe distance, take a photo, and leave. Tumpak Sewu is different. To understand it properly — to actually feel what makes it extraordinary — you have to go down. Into the gorge. To the base. And that descent is what separates Tumpak Sewu from every other waterfall in Indonesia.</p>
+          <p>From the top viewpoint, the scale registers immediately. A curtain of white water 120 meters tall and 120 meters wide, dropping into a deep jungle canyon below you. It is loud from up here. By the time you reach the bottom, the roar is so total that you cannot hear the person standing next to you.</p>
+          <p>The trail down is steep. There are fixed ropes at the most difficult sections, and a local ranger guides each group. It takes about 45 minutes to descend and 60 minutes to climb back out. The path is narrow — in places, just wide enough for one person — with significant drops on one side. This is not a casual walk. Guests with knee problems, vertigo, or fear of heights should stay at the top viewpoint, which is itself spectacular and requires no descent.</p>
+          <p>What nobody tells you: everything gets wet. Not slightly damp — genuinely soaked. The mist from the waterfall at the base is constant and dense. Your clothes, your hair, your phone (unless in a waterproof case), your shoes — all wet. This is not a problem. It is part of the experience. But pack dry clothes in a separate bag for the drive back, and bring a waterproof phone case or zip-lock bag. You will want to take photos, and your phone will be under direct mist spray.</p>
+          <p>Nearby Goa Tetes cave is often skipped by tourists who run out of energy after the descent. Do not skip it. The cave is a short walk from the waterfall base and features several smaller waterfalls flowing directly through limestone formations — the kind of scene that looks like it was designed for a film set. It adds about 45 minutes to the visit and is worth every minute.</p>
+          <p>Tumpak Sewu is the most physically demanding of the three tours I offer. It is also, for many guests, the one they remember most vividly — because they earned it.</p>
+        </div>
+        <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I%20want%20to%20book%20the%20Tumpak%20Sewu%20tour." class="article-cta" target="_blank">Book this tour →</a>
+      </div>
+    </article>
+
+    <!-- KAWAH IJEN ARTICLE -->
+    <article class="article-card">
+      <div class="article-img-wrap">
+        <img src="kawahijen.jpg" alt="Kawah Ijen blue fire" class="article-img">
+        <span class="article-tag">Destination</span>
+      </div>
+      <div class="article-body">
+        <p class="article-meta">By Kandi · East Java Guide</p>
+        <h3 class="article-title">Kawah Ijen: Blue Fire, Acid Lakes, and the Men Who Carry Mountains</h3>
+        <div class="article-text">
+          <p>There are two experiences at Kawah Ijen. Most tourists come for the blue fire. The one that stays with you longer is the sulfur miners.</p>
+          <p>The blue fire is real, and it is extraordinary. It is one of only two places on Earth where this phenomenon occurs — ignited sulfuric gases that burn electric blue, visible only in complete darkness. To see it, you hike 3km up a steep volcanic trail in the dark, arriving at the crater between 2 and 4 AM. The blue flames glow at the crater's edge below you, reflecting faintly off the turquoise acid lake behind them. It looks like something from another planet. No photograph has ever captured it accurately because cameras struggle with the combination of darkness and blue light. You have to be there.</p>
+          <p>As dawn breaks, the blue fire disappears — swallowed by daylight — and what replaces it is the world's largest acidic volcanic crater lake. Turquoise, vast, impossible. The water has a pH below 0.3, meaning it is more acidic than battery acid. It is also one of the most beautiful things I have ever seen, which creates a strange contradiction: something this dangerous being this beautiful.</p>
+          <p>The sulfur miners are the experience that changes people. They work in the crater, filling baskets with yellow sulfur blocks that they then carry up the crater trail and 3km back down to the weighing station — loads of 70 to 90 kilograms, on their shoulders, in sulfur gas, every day. Some of them have been doing this for 20 or 30 years. They earn roughly Rp 50,000 to Rp 100,000 per trip — sometimes less than the entrance ticket a tourist pays.</p>
+          <p>When you see them on the trail, moving slowly under those loads, the most important thing you can do is step aside immediately and let them pass. They cannot stop with that weight. They need the trail clear. And as they pass — close enough to see the yellow dust on their clothes and the effort in their faces — most tourists go quiet in a way they did not expect to go quiet.</p>
+          <p>Kawah Ijen is not just a natural spectacle. It is a reminder of what human endurance actually looks like.</p>
+        </div>
+        <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I%20want%20to%20book%20the%20Kawah%20Ijen%20tour." class="article-cta" target="_blank">Book this tour →</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ── CULINARY ARTICLES ── -->
+<section id="articles-culinary">
+  <p class="section-label reveal">Food Stories</p>
+  <h2 class="section-title reveal">Malang's <em style="font-family:'Playfair Display',serif;font-style:italic;color:var(--earth)">food culture</em></h2>
+  <p class="section-intro reveal">Food in Malang is not just sustenance — it is history, identity, and community. These three places tell that story better than any museum could.</p>
+
+  <div class="articles-grid reveal">
+
+    <!-- TOKO OEN ARTICLE -->
+    <article class="article-card">
+      <div class="article-img-wrap">
+        <img src="eskrimtokooen.jpg" alt="Toko Oen Malang" class="article-img">
+        <span class="article-tag" style="background:var(--gold)">Culinary</span>
+      </div>
+      <div class="article-body">
+        <p class="article-meta">By Kandi · Malang Food Guide</p>
+        <h3 class="article-title">Toko Oen: Where Malang Keeps Its Colonial Memory</h3>
+        <div class="article-text">
+          <p>Most cities tear down their colonial buildings. Malang kept one and turned it into an ice cream restaurant. That decision — made by the Oen family sometime in the 1930s — created something that has outlasted the colonial era itself by nearly a century.</p>
+          <p>Walking into Toko Oen is a specific kind of time travel. The building is a protected cultural heritage site, which means nothing inside has been significantly modernised. The high wooden ceiling, the round marble-topped tables, the worn wooden chairs with curved backs, the faded Dutch signage on the walls — all of it exactly as it was when this was a gathering place for Malang's Dutch colonial society. The songs playing from a small speaker are Indonesian ballads from the 1970s. The combination sounds like it should not work. It works completely.</p>
+          <p>The food is secondary to the atmosphere — and the menu will tell you that honestly if you pay attention. This is Dutch-Indonesian fusion cuisine from a time when those two cultures were entangled in ways that were complicated and ultimately unjust, but which produced a culinary tradition that exists nowhere else. The chicken steak with brown sauce, the lumpia goreng, the kroket — these are dishes that belong specifically to this era and this place.</p>
+          <p>The ice cream is the thing. Made in-house using original recipes — Tutti Fruity, vanilla, chocolate, strawberry — it has the texture of a classic soft-serve rather than a dense Italian gelato. Order two scoops minimum. The Tutti Fruity is the one that has stayed on the menu since the beginning for a reason.</p>
+          <p>A word of honest advice: bring cash. Toko Oen does not accept cards or QRIS. This is not an oversight — it is a choice that fits the aesthetic. An ATM is three minutes away on foot.</p>
+          <p>Come in the morning or late afternoon to avoid weekend crowds. Sit near the window if you can. Order slowly. Stay longer than you planned.</p>
+        </div>
+        <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I%20want%20to%20visit%20Toko%20Oen%20on%20my%20culinary%20tour." class="article-cta" target="_blank">Add to my tour →</a>
+      </div>
+    </article>
+
+    <!-- BAKSO PRESIDENT ARTICLE -->
+    <article class="article-card">
+      <div class="article-img-wrap">
+        <img src="baksopresident.jpg" alt="Bakso President Malang" class="article-img">
+        <span class="article-tag" style="background:var(--gold)">Culinary</span>
+      </div>
+      <div class="article-body">
+        <p class="article-meta">By Kandi · Malang Food Guide</p>
+        <h3 class="article-title">Bakso President: Why a Meatball Beside Railway Tracks Became a Legend</h3>
+        <div class="article-text">
+          <p>In the 1970s, a man named Abah Sugito arrived in Malang from outside the city and started selling bakso from a shoulder pole he carried through the streets. He had no restaurant, no address, no fixed location — just a cart, a recipe, and the willingness to walk. Decades later, the warung he built has a permanent address, a Facebook page with thousands of followers, and a reputation that has spread across Indonesia.</p>
+          <p>Bakso President sits directly beside an active railway line. The tables are set up within a few meters of the tracks, and during a meal, trains pass close enough that the plates vibrate slightly on the table. This is not a marketing gimmick — the warung was built there because the land was available and cheap, and the trains were simply part of the neighbourhood. Now the trains are part of the experience.</p>
+          <p>The bakso itself deserves the reputation. The meatballs are made fresh from real beef — no fillers, no preservatives — and the broth is simmered from bones for hours. But the signature item is the Bakso Bakar: meatballs taken off the boil and grilled over charcoal, brushed with a sweet-spiced soy sauce that caramelises on the surface. The result is a meatball that is smoky outside, tender inside, and entirely unlike anything you have eaten before if you have never had charcoal-grilled bakso.</p>
+          <p>Order at the counter first, then find a seat. Do not wait for someone to come to you — that is not how it works here. The ordering system can feel confusing at first because of the queue and the noise, but the staff are patient with foreign visitors.</p>
+          <p>Prices are astonishing for the quality. A full bowl of mixed bakso with noodles and broth costs less than Rp 30,000. A serving of Bakso Bakar is Rp 12,000 to Rp 15,000. For the experience and the food, this is one of the best value meals in all of East Java.</p>
+        </div>
+        <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I%20want%20to%20visit%20Bakso%20President%20on%20my%20culinary%20tour." class="article-cta" target="_blank">Add to my tour →</a>
+      </div>
+    </article>
+
+    <!-- RAWON NGULING ARTICLE -->
+    <article class="article-card">
+      <div class="article-img-wrap">
+        <img src="rawonnguling.jpg" alt="Rawon Nguling Malang" class="article-img">
+        <span class="article-tag" style="background:var(--gold)">Culinary</span>
+      </div>
+      <div class="article-body">
+        <p class="article-meta">By Kandi · Malang Food Guide</p>
+        <h3 class="article-title">Rawon Nguling: The Black Soup That Defines East Java</h3>
+        <div class="article-text">
+          <p>If you want to understand East Javanese food culture in a single bowl, order the rawon dengkul at Rawon Nguling on Jl. Zainul Arifin. Everything that matters about this cuisine is in that bowl: the ancient ingredient (kluwek nut, used in Javanese cooking for centuries), the patience of the preparation (slow-braised beef knee, falling apart before you touch it), and the honesty of the flavour (nothing hidden, nothing over-spiced, nothing performed for tourist expectations).</p>
+          <p>Rawon is East Java's most distinctive dish. The jet-black broth comes from kluwek — a nut from the kepayang tree that is toxic when raw but, after fermentation, produces a deep, earthy, slightly smoky flavour that has no equivalent in any other cuisine. First-time visitors often hesitate at the colour. The colour is the point. It signals that this bowl was made the right way, with the right ingredient, in the right quantity.</p>
+          <p>Rawon Nguling has been operating since 1983, originally from the Nguling area of Probolinggo — a town known across East Java for producing particularly good rawon. The Malang branch on Jl. Zainul Arifin opens at 07:00 AM because rawon is, in East Java, a breakfast food. This surprises most foreign visitors. A rich, black beef soup for breakfast sounds improbable. By the second spoonful, it sounds obvious.</p>
+          <p>The gorengan system is important to understand before you sit down. When you are seated, a plate of fried items — perkedel (potato cake), tempe goreng, babat (tripe), empal (fried beef) — arrives at your table automatically. You are not required to eat any of it. You pay only for what you take from the plate. The perkedel is non-negotiable. The tempe goreng at Rawon Nguling is frequently described by regulars as the best fried tempeh in Malang. Take at least one piece.</p>
+          <p>Arrive before 11:00 AM to avoid the lunch rush, or — better — arrive at opening and have breakfast. The early morning at Rawon Nguling, with the restaurant quiet and the soup fresh, is one of the most underrated food experiences in East Java.</p>
+        </div>
+        <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I%20want%20to%20visit%20Rawon%20Nguling%20on%20my%20culinary%20tour." class="article-cta" target="_blank">Add to my tour →</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials">
+  <p class="section-label reveal">Guest Reviews</p>
+  <h2 class="section-title reveal">What guests <em style="font-family:'Playfair Display',serif;font-style:italic;color:var(--earth)">say</em></h2>
+  <p class="section-intro reveal">Real experiences from real travellers. Every review here came directly from a guest — unedited, unfiltered.</p>
+
+  <div class="testimonials-grid reveal">
+
+    <!-- TESTIMONIAL 1 — PLACEHOLDER -->
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"Replace this with a real guest review. Ask your first foreign visitor to send you a WhatsApp message about their experience, then copy it here word for word. Real words from real people convert better than anything professionally written."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">?</div>
+        <div>
+          <p class="testimonial-name">Guest Name Here</p>
+          <p class="testimonial-origin">Country · Tour taken</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIAL 2 — PLACEHOLDER -->
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"Replace this with a real guest review. Even a short WhatsApp message like 'Thank you Kandi, Bromo was incredible!' is enough. Real testimonials from real names build more trust than polished ones."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">?</div>
+        <div>
+          <p class="testimonial-name">Guest Name Here</p>
+          <p class="testimonial-origin">Country · Tour taken</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIAL 3 — PLACEHOLDER -->
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"Replace this with a real guest review. Three testimonials is the minimum for credibility. Five is ideal. When you have real ones, delete these placeholder cards and paste in the real text."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">?</div>
+        <div>
+          <p class="testimonial-name">Guest Name Here</p>
+          <p class="testimonial-origin">Country · Tour taken</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SHARE YOUR EXPERIENCE CTA -->
+  <div class="testimonial-cta reveal">
+    <p class="testimonial-cta-text">Been on a tour with R Kandi? Share your experience.</p>
+    <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I%20would%20like%20to%20share%20my%20experience%20from%20the%20tour." class="whatsapp-btn" target="_blank" rel="noopener" style="margin-top:0;display:inline-flex;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Send your review on WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ── DO & DONT ── -->
+<section id="dos-donts">
+  <p class="section-label reveal">Travel Tips</p>
+  <h2 class="section-title reveal">Do's &amp; Don'ts in Malang</h2>
+  <p class="section-intro reveal">Malang is warm and welcoming — but like everywhere, knowing local customs makes your trip smoother and your connections more genuine.</p>
+
+  <div class="rules-grid reveal">
+    <div>
+      <h3 class="rules-col-title do"><span class="rule-icon do">✓</span> Do's</h3>
+      <div class="rule-item"><span class="rule-icon do">✓</span><div><p class="rule-title">Dress modestly at temples &amp; mosques</p><p class="rule-sub">Cover shoulders and knees. Sarongs are often available to borrow at temple entrances.</p></div></div>
+      <div class="rule-item"><span class="rule-icon do">✓</span><div><p class="rule-title">Greet with "Selamat pagi / siang / sore"</p><p class="rule-sub">A simple local greeting goes a long way. Locals genuinely appreciate the effort.</p></div></div>
+      <div class="rule-item"><span class="rule-icon do">✓</span><div><p class="rule-title">Bargain politely at local markets</p><p class="rule-sub">Haggling is expected and enjoyed — just keep it friendly and smile throughout.</p></div></div>
+      <div class="rule-item"><span class="rule-icon do">✓</span><div><p class="rule-title">Carry small change (IDR 1.000–5.000)</p><p class="rule-sub">Street vendors and warung often can't break large bills. Small notes keep things smooth.</p></div></div>
+      <div class="rule-item"><span class="rule-icon do">✓</span><div><p class="rule-title">Ask before photographing people</p><p class="rule-sub">A quick smile and gesture goes a long way. Most locals are happy to be photographed with permission.</p></div></div>
+    </div>
+    <div>
+      <h3 class="rules-col-title dont"><span class="rule-icon dont">✕</span> Don'ts</h3>
+      <div class="rule-item"><span class="rule-icon dont">✕</span><div><p class="rule-title">Don't use your left hand for giving/receiving</p><p class="rule-sub">In Indonesian culture the left hand is considered unclean. Always use your right hand or both hands.</p></div></div>
+      <div class="rule-item"><span class="rule-icon dont">✕</span><div><p class="rule-title">Don't point with your finger</p><p class="rule-sub">Use your thumb or an open hand to gesture. Pointing with a finger is considered rude.</p></div></div>
+      <div class="rule-item"><span class="rule-icon dont">✕</span><div><p class="rule-title">Don't raise your voice in public</p><p class="rule-sub">Loud displays of frustration cause loss of face for everyone. Stay calm always.</p></div></div>
+      <div class="rule-item"><span class="rule-icon dont">✕</span><div><p class="rule-title">Don't eat openly during Ramadan</p><p class="rule-sub">Be mindful about eating and drinking in public during fasting hours out of respect.</p></div></div>
+      <div class="rule-item"><span class="rule-icon dont">✕</span><div><p class="rule-title">Don't ignore a local's offer of hospitality</p><p class="rule-sub">If someone offers tea or food, a brief polite acceptance is deeply appreciated.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GUESTHOUSE ── -->
+<section id="guesthouse">
+  <p class="section-label reveal">Where to Stay</p>
+  <h2 class="section-title reveal">Pesona <em style="font-family:'Playfair Display',serif;font-style:italic;">Guesthouse</em></h2>
+  <p class="section-intro reveal">A network of comfortable, affordable guesthouses across Malang — personally managed and recommended by your guide.</p>
+
+  <div class="guesthouse-feature reveal">
+    <div class="guesthouse-img-wrap">
+      <!-- REPLACE src with images/guesthouse.jpg -->
+      <img src="pesonasyariah02.jpg" alt="Pesona Guesthouse Malang room interior">
+    </div>
+    <div>
+      <h3 class="guesthouse-name">Pesona Guesthouse Syariah</h3>
+      <p class="guesthouse-desc">Clean, comfortable, and well-located — Pesona Guesthouse is where your Malang adventure begins. Personally managed with emphasis on making foreign guests feel safe, welcome, and well-informed. English-speaking staff, reliable WiFi, and a team that genuinely cares about your experience.</p>
+      <div class="amenities">
+        <span class="amenity">Free WiFi</span>
+        <span class="amenity">Air conditioning</span>
+        <span class="amenity">24hr security</span>
+        <span class="amenity">English spoken</span>
+        <span class="amenity">Flexible check-in</span>
+        <span class="amenity">Local tips included</span>
+        <span class="amenity">VPN-friendly WiFi</span>
+        <span class="amenity">Central Malang</span>
+      </div>
+      <a href="https://book-directonline.com/properties/PesonaGuesthouseDirect" target="_blank" rel="noopener" class="book-btn">
+        View Rooms &amp; Book
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOOKING ── -->
+<section id="booking">
+  <p class="section-label reveal">Reserve Your Tour</p>
+  <h2 class="section-title reveal">Book with <em style="font-family:'Playfair Display',serif;font-style:italic;color:var(--earth)">Kandi</em></h2>
+  <p class="section-intro reveal">Fill in the form below and I will send you a confirmed itinerary and payment details via WhatsApp within 2 hours. No payment required to submit — just tell me what you need.</p>
+
+  <div class="booking-grid reveal">
+
+    <!-- BOOKING FORM -->
+    <div class="booking-form-wrap">
+      <form class="booking-form" action="https://formspree.io/f/YOURFORMID" method="POST">
+        <!-- Hidden field so you know this is a booking not a contact -->
+        <input type="hidden" name="_subject" value="New Tour Booking Request — Pesona East Java Tour">
+
+        <div class="booking-section-label">Tour Selection</div>
+        <div class="booking-row">
+          <div class="booking-field full">
+            <label class="booking-label">Which tour are you interested in? *</label>
+            <div class="tour-options">
+              <label class="tour-option">
+                <input type="radio" name="tour" value="Mount Bromo Sunrise Tour" required>
+                <div class="tour-option-card">
+                  <span class="tour-option-icon">🌋</span>
+                  <span class="tour-option-name">Mount Bromo</span>
+                  <span class="tour-option-sub">Sunrise · ~3hrs from Malang</span>
+                </div>
+              </label>
+              <label class="tour-option">
+                <input type="radio" name="tour" value="Tumpak Sewu Waterfall Adventure">
+                <div class="tour-option-card">
+                  <span class="tour-option-icon">💧</span>
+                  <span class="tour-option-name">Tumpak Sewu</span>
+                  <span class="tour-option-sub">Waterfall · ~3.5hrs from Malang</span>
+                </div>
+              </label>
+              <label class="tour-option">
+                <input type="radio" name="tour" value="Kawah Ijen Blue Fire Expedition">
+                <div class="tour-option-card">
+                  <span class="tour-option-icon">🔵</span>
+                  <span class="tour-option-name">Kawah Ijen</span>
+                  <span class="tour-option-sub">Blue Fire · Night hike</span>
+                </div>
+              </label>
+              <label class="tour-option">
+                <input type="radio" name="tour" value="Culinary Tour — Malang Food Experience">
+                <div class="tour-option-card">
+                  <span class="tour-option-icon">🍜</span>
+                  <span class="tour-option-name">Culinary Tour</span>
+                  <span class="tour-option-sub">Toko Oen · Bakso · Rawon</span>
+                </div>
+              </label>
+              <label class="tour-option">
+                <input type="radio" name="tour" value="Combined Tour — Bromo + Tumpak Sewu (2 Days)">
+                <div class="tour-option-card">
+                  <span class="tour-option-icon">🗺️</span>
+                  <span class="tour-option-name">Combined 2-Day</span>
+                  <span class="tour-option-sub">Bromo + Tumpak Sewu</span>
+                </div>
+              </label>
+              <label class="tour-option">
+                <input type="radio" name="tour" value="Custom Tour — I will describe in special requests">
+                <div class="tour-option-card">
+                  <span class="tour-option-icon">✏️</span>
+                  <span class="tour-option-name">Custom Tour</span>
+                  <span class="tour-option-sub">I'll describe below</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-section-label">Your Details</div>
+        <div class="booking-row">
+          <div class="booking-field">
+            <label class="booking-label" for="b-name">Full Name *</label>
+            <input type="text" id="b-name" name="name" class="booking-input" placeholder="John Smith" required>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label" for="b-email">Email Address *</label>
+            <input type="email" id="b-email" name="email" class="booking-input" placeholder="john@email.com" required>
+          </div>
+        </div>
+        <div class="booking-row">
+          <div class="booking-field">
+            <label class="booking-label" for="b-whatsapp">WhatsApp Number *</label>
+            <input type="tel" id="b-whatsapp" name="whatsapp" class="booking-input" placeholder="+61 412 345 678" required>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label" for="b-country">Country / Nationality</label>
+            <input type="text" id="b-country" name="country" class="booking-input" placeholder="Australia, UK, USA...">
+          </div>
+        </div>
+
+        <div class="booking-section-label">Tour Details</div>
+        <div class="booking-row">
+          <div class="booking-field">
+            <label class="booking-label" for="b-date">Preferred Tour Date *</label>
+            <input type="date" id="b-date" name="preferred_date" class="booking-input" required>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label" for="b-altdate">Alternative Date (optional)</label>
+            <input type="date" id="b-altdate" name="alternative_date" class="booking-input">
+          </div>
+        </div>
+        <div class="booking-row">
+          <div class="booking-field">
+            <label class="booking-label" for="b-pax">Number of People *</label>
+            <select id="b-pax" name="number_of_people" class="booking-input" required>
+              <option value="">— Select —</option>
+              <option value="1 person (solo)">1 person (solo)</option>
+              <option value="2 people">2 people</option>
+              <option value="3 people">3 people</option>
+              <option value="4 people">4 people</option>
+              <option value="5 people">5 people</option>
+              <option value="6 people">6 people</option>
+              <option value="7-10 people (small group)">7–10 people (small group)</option>
+              <option value="More than 10 people">More than 10 people</option>
+            </select>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label" for="b-pickup">Hotel / Pickup Location *</label>
+            <input type="text" id="b-pickup" name="pickup_location" class="booking-input" placeholder="e.g. Hotel Tugu Malang, Jl. Surabaya No.3" required>
+          </div>
+        </div>
+
+        <div class="booking-section-label">Additional Information</div>
+        <div class="booking-row">
+          <div class="booking-field full">
+            <label class="booking-label" for="b-special">Special Requests / Questions</label>
+            <textarea id="b-special" name="special_requests" class="booking-input booking-textarea"
+              placeholder="Tell me anything useful — dietary requirements, physical limitations, children in the group, specific interests, budget range, or anything else you'd like me to know before your tour..."></textarea>
+          </div>
+        </div>
+        <div class="booking-row">
+          <div class="booking-field full">
+            <label class="booking-label" for="b-how">How did you find this website?</label>
+            <select id="b-how" name="referral_source" class="booking-input">
+              <option value="">— Select (optional) —</option>
+              <option value="Google Search">Google Search</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Facebook">Facebook</option>
+              <option value="TripAdvisor">TripAdvisor</option>
+              <option value="Recommended by a friend">Recommended by a friend</option>
+              <option value="Booking.com / Agoda">Booking.com / Agoda</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="booking-notice">
+          <span class="booking-notice-icon">ℹ️</span>
+          <p>No payment required to submit this form. After receiving your request, I will contact you via WhatsApp within 2 hours with a confirmed itinerary, pricing, and payment details.</p>
+        </div>
+
+        <button type="submit" class="booking-submit">
+          Send Booking Request
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- BOOKING INFO PANEL -->
+    <div class="booking-info">
+
+      <div class="booking-info-card">
+        <div class="booking-info-title">What happens next?</div>
+        <div class="booking-steps">
+          <div class="booking-step">
+            <div class="booking-step-num">1</div>
+            <div class="booking-step-text">
+              <strong>You submit this form</strong>
+              <span>Takes 2 minutes. No payment yet.</span>
+            </div>
+          </div>
+          <div class="booking-step">
+            <div class="booking-step-num">2</div>
+            <div class="booking-step-text">
+              <strong>R Kandi contacts you</strong>
+              <span>Via WhatsApp within 2 hours with itinerary and price.</span>
+            </div>
+          </div>
+          <div class="booking-step">
+            <div class="booking-step-num">3</div>
+            <div class="booking-step-text">
+              <strong>You confirm & pay</strong>
+              <span>Bank transfer to secure your booking. Receipt required.</span>
+            </div>
+          </div>
+          <div class="booking-step">
+            <div class="booking-step-num">4</div>
+            <div class="booking-step-text">
+              <strong>Booking confirmed</strong>
+              <span>You receive a written confirmation with all details.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-info-card">
+        <div class="booking-info-title">Good to know</div>
+        <ul class="booking-info-list">
+          <li>All tours depart from your hotel in Malang</li>
+          <li>Private tours — no strangers in your group</li>
+          <li>English-speaking guide throughout</li>
+          <li>All entrance tickets included</li>
+          <li>Free cancellation 48 hours before tour date</li>
+          <li>Payment via bank transfer (BCA / BRI / Mandiri)</li>
+        </ul>
+      </div>
+
+      <div class="booking-info-card booking-contact-card">
+        <div class="booking-info-title">Prefer to message directly?</div>
+        <p class="booking-contact-text">Send me a WhatsApp message and I will reply personally.</p>
+        <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I%20want%20to%20book%20a%20tour%20in%20Malang." class="whatsapp-btn" target="_blank" rel="noopener" style="margin-top:0.75rem;display:inline-flex;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <p class="section-label reveal">Your Guide</p>
+  <h2 class="section-title reveal">Meet R Kandi</h2>
+
+  <div class="about-grid reveal">
+    <div class="about-photo-wrap">
+      <!-- REPLACE src with images/kandi.jpg — your actual photo -->
+      <img class="about-photo" src="kandisatriyaphoto.jpg" alt="Kandi your Malang tour guide">
+      <div class="about-photo-caption">Malang, East Java</div>
+    </div>
+    <div>
+      <h3 class="about-name">R Kandi Andika Satriya</h3>
+      <p class="about-role">Local Guide · Operations Manager · Malang Native</p>
+      <p class="about-text">I was born and raised in Malang. I have spent 30 years navigating this city — its back alleys, its best warungs, its hidden waterfalls, and its people. When you tour with me, you are not following a script. You are walking with someone who lives here.</p>
+      <p class="about-text">I prefer to think of myself as someone who never stops being curious. I have worked across education, property management, and operations. Every chapter taught me something new about this extraordinary part of the world.</p>
+      <p class="about-text">I believe travel should feel real. Not rehearsed. My tours are conversations, not performances.</p>
+      <div class="about-stats">
+        <div><div class="about-stat-num">30+</div><div class="about-stat-label">Years in Malang</div></div>
+        <div><div class="about-stat-num">3</div><div class="about-stat-label">Signature destinations</div></div>
+        <div><div class="about-stat-num">12</div><div class="about-stat-label">Guesthouse locations</div></div>
+      </div>
+      <p class="about-text">I speak <strong>English</strong> comfortably and respond quickly. I am honest about what each tour involves — including the challenging parts. No surprises.</p>
+      <div class="about-langs">
+        <span class="lang-tag">English — B2/C1</span>
+        <span class="lang-tag">Bahasa Indonesia</span>
+        <span class="lang-tag">Javanese</span>
+      </div>
+      <!-- REPLACE 62YOURNUMBER with your actual WhatsApp number -->
+      <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I%20found%20your%20travel%20guide%20and%20I%27m%20interested%20in%20a%20tour%20in%20Malang." class="whatsapp-btn" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <a href="mailto:kandisatriya.remote@gmail.com" class="email-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        kandisatriya.remote@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <p class="section-label reveal">Get in Touch</p>
+  <h2 class="section-title reveal">Plan your <em style="font-family:'Playfair Display',serif;font-style:italic;color:var(--earth)">Malang trip</em></h2>
+  <p class="section-intro reveal">Whether you have a question about a destination, want to arrange a custom tour, or just need local advice — I respond to every message personally, usually within 2 hours.</p>
+
+  <div class="contact-grid reveal">
+    <div class="contact-cards">
+      <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I%20found%20your%20travel%20guide%20and%20I%27m%20interested%20in%20a%20tour%20in%20Malang." class="contact-card whatsapp" target="_blank" rel="noopener">
+        <div class="contact-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div class="contact-card-body">
+          <p class="contact-card-label">WhatsApp</p>
+          <p class="contact-card-value">+62 812 5090 0387</p>
+          <p class="contact-card-note">Fastest response · Usually within 2 hours</p>
+        </div>
+      </a>
+      <a href="mailto:kandisatriya.remote@gmail.com" class="contact-card email">
+        <div class="contact-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="contact-card-body">
+          <p class="contact-card-label">Email</p>
+          <p class="contact-card-value">kandisatriya.remote@gmail.com</p>
+          <p class="contact-card-note">For detailed inquiries & tour planning</p>
+        </div>
+      </a>
+    </div>
+
+    <form class="contact-form" action="https://formspree.io/f/YOURFORMID" method="POST">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="contact-name">Your Name</label>
+          <input type="text" id="contact-name" name="name" placeholder="John Smith" required>
+        </div>
+        <div class="form-field">
+          <label for="contact-email">Your Email</label>
+          <input type="email" id="contact-email" name="email" placeholder="john@email.com" required>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="contact-interest">I'm interested in</label>
+        <select id="contact-interest" name="interest">
+          <option value="">— Select a topic —</option>
+          <option value="bromo">Mount Bromo Tour</option>
+          <option value="tumpak">Tumpak Sewu Tour</option>
+          <option value="ijen">Kawah Ijen Tour</option>
+          <option value="culinary">Culinary Tour</option>
+          <option value="custom">Custom / Multi-day Tour</option>
+          <option value="guesthouse">Guesthouse Stay</option>
+          <option value="other">General Question</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="contact-msg">Message</label>
+        <textarea id="contact-msg" name="message" rows="4" placeholder="Tell me your travel dates, group size, and anything specific you'd like to do..." required></textarea>
+      </div>
+      <button type="submit" class="form-submit">
+        Send Message
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <p class="form-note">I reply to every message personally. Usually within 2 hours.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ── CURRENCY BAR ── -->
+<div class="currency-bar">
+  <span class="currency-label">Live Rates → IDR</span>
+  <div class="currency-rates" id="currency-rates">
+    <span class="currency-item">Loading rates...</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div>
+    <p class="footer-brand">Malang East Java</p>
+    <p class="footer-tagline">An authentic local guide to one of Indonesia's most underrated travel destinations. Built with love for this city.</p>
+  </div>
+  <div>
+    <p class="footer-col-title">Explore</p>
+    <ul class="footer-links">
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#culinary">Culinary</a></li>
+      <li><a href="#articles-dest">Articles</a></li>
+      <li><a href="#testimonials">Guest Reviews</a></li>
+      <li><a href="#dos-donts">Do's &amp; Don'ts</a></li>
+      <li><a href="#guesthouse">Guesthouse</a></li>
+      <li><a href="#booking">Book a Tour</a></li>
+      <li><a href="#about">About R Kandi</a></li>
+    </ul>
+  </div>
+  <div>
+    <p class="footer-col-title">Contact</p>
+    <ul class="footer-links">
+      <li><a href="https://wa.me/6281250900387">WhatsApp</a></li>
+      <li><a href="mailto:kandisatriya.remote@gmail.com">Email R Kandi</a></li>
+      <li><a href="#guesthouse">Book a Room</a></li>
+      <li><a href="#contact">Book a Tour</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 Pesona East Java Tour & Travel · R Kandi</span>
+  <span>Malang, East Java, Indonesia</span>
+</div>
+
+<!-- JavaScript — loaded at bottom so HTML renders first -->
+<script src="main.js"></script>
+
+</body>
+</html>

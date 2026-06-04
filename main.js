@@ -66,7 +66,7 @@ function toggleDetail(id, btn) {
       btn.classList.add('open');
       btn.innerHTML = 'Close details <em class="arrow">▼</em>';
     }
-    setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    scrollToPanel(panel);
   }
 }
 
@@ -93,20 +93,106 @@ async function loadWeather() {
 }
 
 /* ── CURRENCY ── */
+/* Frankfurter API updates rates every business day automatically.
+   This code adds smart caching (6 hours) so repeat visitors
+   see instant rates, then refreshes in the background. */
+ 
+const CURRENCY_CACHE_KEY = 'pesona-currency-cache';
+const CURRENCY_CACHE_TTL = 6 * 60 * 60 * 1000; // 6 hours in milliseconds
+ 
+const CURRENCY_PAIRS = [
+  ['USD', '$',   'US Dollar'],
+  ['EUR', '€',   'Euro'],
+  ['GBP', '£',   'British Pound'],
+  ['AUD', 'A$',  'Australian Dollar'],
+  ['SGD', 'S$',  'Singapore Dollar'],
+  ['JPY', '¥',   'Japanese Yen'],
+  ['MYR', 'RM',  'Malaysian Ringgit'],
+  ['KRW', '₩',   'Korean Won'],
+];
+ 
 async function loadCurrency() {
-  try {
-    const r = await fetch('https://api.frankfurter.dev/v2/rates?base=IDR&quotes=USD,EUR,GBP,AUD,SGD');
-    const d = await r.json();
-    const rates = d.rates;
-    const pairs = [['USD','$'], ['EUR','€'], ['GBP','£'], ['AUD','A$'], ['SGD','S$']];
-    document.getElementById('currency-rates').innerHTML = pairs.map(([cur, sym]) => {
-      const val = rates[cur] ? (10000 * rates[cur]).toFixed(4) : '—';
-      return `<span class="currency-item">IDR 10,000 = <span>${sym}${val}</span></span>`;
-    }).join('');
-  } catch(e) {
-    document.getElementById('currency-rates').innerHTML =
-      '<span class="currency-item">Rates temporarily unavailable</span>';
+  // 1. Try to load from cache first for instant display
+  const cached = getCurrencyCache();
+  if (cached) {
+    displayCurrency(cached.rates, cached.timestamp, true);
   }
+ 
+  // 2. Always fetch fresh if cache expired or missing
+  if (!cached || isCacheExpired(cached.timestamp)) {
+    try {
+      const quotes = CURRENCY_PAIRS.map(p => p[0]).join(',');
+      const r = await fetch(
+        `https://api.frankfurter.dev/v2/rates?base=IDR&quotes=${quotes}`
+      );
+      if (!r.ok) throw new Error('API error');
+      const d = await r.json();
+      const now = Date.now();
+ 
+      // Save to cache
+      localStorage.setItem(CURRENCY_CACHE_KEY, JSON.stringify({
+        rates: d.rates,
+        timestamp: now
+      }));
+ 
+      displayCurrency(d.rates, now, false);
+    } catch(e) {
+      // If fetch fails and no cache, show fallback
+      if (!cached) {
+        document.getElementById('currency-rates').innerHTML =
+          '<span class="currency-item">Rates temporarily unavailable — please refresh</span>';
+      }
+      // If cache exists, it already displayed — silent fail is fine
+    }
+  }
+}
+ 
+function displayCurrency(rates, timestamp, fromCache) {
+  const el = document.getElementById('currency-rates');
+  if (!el) return;
+ 
+  // Format the update time
+  const updateDate = new Date(timestamp);
+  const timeStr = updateDate.toLocaleDateString('en-GB', {
+    day: '2-digit', month: 'short', year: 'numeric'
+  });
+ 
+  const rateItems = CURRENCY_PAIRS.map(([cur, sym, name]) => {
+    const rate = rates[cur];
+    if (!rate) return '';
+    // Show IDR 10,000 = X for small currencies, IDR 1,000 for JPY/KRW
+    const [idrAmount, divisor] = (cur === 'JPY' || cur === 'KRW')
+      ? ['IDR 1,000', 1000]
+      : ['IDR 10,000', 10000];
+    const val = (divisor * rate).toFixed(cur === 'JPY' || cur === 'KRW' ? 2 : 4);
+    return `<span class="currency-item" title="${name}">
+      ${idrAmount} = <span>${sym}${val}</span>
+    </span>`;
+  }).filter(Boolean).join('');
+ 
+  el.innerHTML = rateItems;
+ 
+  // Add or update the timestamp display
+  const existing = document.getElementById('currency-timestamp');
+  const tsHtml = `<span id="currency-timestamp" class="currency-timestamp">
+    🕐 Rates updated: ${timeStr}${fromCache ? ' (cached)' : ' (live)'}
+  </span>`;
+  if (existing) {
+    existing.outerHTML = tsHtml;
+  } else {
+    el.insertAdjacentHTML('afterend', tsHtml);
+  }
+}
+ 
+function getCurrencyCache() {
+  try {
+    const raw = localStorage.getItem(CURRENCY_CACHE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch(e) { return null; }
+}
+ 
+function isCacheExpired(timestamp) {
+  return Date.now() - timestamp > CURRENCY_CACHE_TTL;
 }
 
 /* ── SCROLL REVEAL ── */

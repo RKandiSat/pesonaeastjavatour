@@ -45,7 +45,7 @@ function toggleFoodDetail(id, btn) {
       btn.classList.add('open');
       btn.innerHTML = 'Close details <em class="arrow">▼</em>';
     }
-    setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+    scrollToPanel(panel);
   }
 }
 

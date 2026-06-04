@@ -28,6 +28,22 @@ function loadYT(containerId, videoId) {
   </div>`;
 }
 
+/* ── SMOOTH SCROLL TO PANEL ── */
+/* Accounts for fixed nav bar height on both PC and mobile */
+function scrollToPanel(panel) {
+  setTimeout(() => {
+    const navHeight = document.querySelector('nav')
+      ? document.querySelector('nav').offsetHeight
+      : 70;
+    const offset = 24; // extra breathing room above the panel
+    const panelTop = panel.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({
+      top: panelTop - navHeight - offset,
+      behavior: 'smooth'
+    });
+  }, 120); // slight delay so panel finishes opening before scroll
+}
+
 /* ── CULINARY DETAIL TOGGLE ── */
 function toggleFoodDetail(id, btn) {
   const panel = document.getElementById(id);
@@ -96,10 +112,10 @@ async function loadWeather() {
 /* Frankfurter API updates rates every business day automatically.
    This code adds smart caching (6 hours) so repeat visitors
    see instant rates, then refreshes in the background. */
- 
+
 const CURRENCY_CACHE_KEY = 'pesona-currency-cache';
 const CURRENCY_CACHE_TTL = 6 * 60 * 60 * 1000; // 6 hours in milliseconds
- 
+
 const CURRENCY_PAIRS = [
   ['USD', '$',   'US Dollar'],
   ['EUR', '€',   'Euro'],
@@ -110,14 +126,14 @@ const CURRENCY_PAIRS = [
   ['MYR', 'RM',  'Malaysian Ringgit'],
   ['KRW', '₩',   'Korean Won'],
 ];
- 
+
 async function loadCurrency() {
   // 1. Try to load from cache first for instant display
   const cached = getCurrencyCache();
   if (cached) {
     displayCurrency(cached.rates, cached.timestamp, true);
   }
- 
+
   // 2. Always fetch fresh if cache expired or missing
   if (!cached || isCacheExpired(cached.timestamp)) {
     try {
@@ -128,13 +144,13 @@ async function loadCurrency() {
       if (!r.ok) throw new Error('API error');
       const d = await r.json();
       const now = Date.now();
- 
+
       // Save to cache
       localStorage.setItem(CURRENCY_CACHE_KEY, JSON.stringify({
         rates: d.rates,
         timestamp: now
       }));
- 
+
       displayCurrency(d.rates, now, false);
     } catch(e) {
       // If fetch fails and no cache, show fallback
@@ -146,17 +162,17 @@ async function loadCurrency() {
     }
   }
 }
- 
+
 function displayCurrency(rates, timestamp, fromCache) {
   const el = document.getElementById('currency-rates');
   if (!el) return;
- 
+
   // Format the update time
   const updateDate = new Date(timestamp);
   const timeStr = updateDate.toLocaleDateString('en-GB', {
     day: '2-digit', month: 'short', year: 'numeric'
   });
- 
+
   const rateItems = CURRENCY_PAIRS.map(([cur, sym, name]) => {
     const rate = rates[cur];
     if (!rate) return '';
@@ -169,9 +185,9 @@ function displayCurrency(rates, timestamp, fromCache) {
       ${idrAmount} = <span>${sym}${val}</span>
     </span>`;
   }).filter(Boolean).join('');
- 
+
   el.innerHTML = rateItems;
- 
+
   // Add or update the timestamp display
   const existing = document.getElementById('currency-timestamp');
   const tsHtml = `<span id="currency-timestamp" class="currency-timestamp">
@@ -183,14 +199,14 @@ function displayCurrency(rates, timestamp, fromCache) {
     el.insertAdjacentHTML('afterend', tsHtml);
   }
 }
- 
+
 function getCurrencyCache() {
   try {
     const raw = localStorage.getItem(CURRENCY_CACHE_KEY);
     return raw ? JSON.parse(raw) : null;
   } catch(e) { return null; }
 }
- 
+
 function isCacheExpired(timestamp) {
   return Date.now() - timestamp > CURRENCY_CACHE_TTL;
 }
